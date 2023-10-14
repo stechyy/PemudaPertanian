@@ -1,0 +1,317 @@
+body {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+  line-height: 1.6;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+nav ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #2e7d32;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  transition: 0.5s ease-in-out;
+}
+
+section {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  transition: 0.35s;
+  cursor: pointer;
+  transform: scale(0.8);
+  opacity: 0;
+  animation: scaleUp 0.5s forwards;
+  background-color: white;
+  color: rgb(67, 67, 67);
+  box-shadow: 0px 0px 10px lightgrey;
+}
+
+section:active {
+  box-shadow: 0px 0px;
+  transform: scale(0.95);
+  margin: 10px;
+}
+.on-hover {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  visibility: hidden;
+  margin-left: -20px;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.on-hover .eye-logo {
+  font-size: 30px;
+  margin: 0;
+}
+
+.on-hover button {
+  cursor: pointer;
+  border: 2px solid white;
+  background-color: rgb(255, 255, 255);
+  color: rgb(48, 48, 48);
+  padding: 5px;
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  width: 120px;
+  border-bottom: 2px solid rgb(68, 153, 228);
+}
+
+footer {
+  width: 100%;
+  background-color: rgb(71, 89, 105);
+  color: #fff;
+  text-align: center;
+  line-height: 150px;
+  height: 150px;
+}
+.grass {
+  height: 20px;
+  width: 100%;
+  background-color: rgb(27, 213, 55);
+  margin: 0;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.expand {
+  animation: expandSection 0.5s ease forwards;
+}
+
+@keyframes expandSection {
+  0% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+#detailContainer {
+  color: black;
+  width: 82%;
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  display: none;
+  margin-top: 50px;
+  color: rgb(60, 60, 60);
+  background-color: white;
+  box-shadow: 0px 0px 15px rgb(134, 134, 134);
+  border-top: 8px solid rgb(68, 153, 228);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  transition: 0.3s;
+}
+
+#detailContainer .text-section h1 {
+  border-bottom: 3px solid rgb(154, 154, 154);
+  border-bottom-right-radius: 20px;
+}
+.s {
+  scale: 0.8;
+  position: absolute;
+}
+.honeycomb {
+  height: 165px;
+  width: 256px;
+  margin: 50px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.honeycomb svg polygon {
+  opacity: 60%;
+}
+.image-section {
+  height: 120px;
+  width: 120px;
+  background-color: rgba(255, 255, 255, 0.308);
+  float: left;
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+}
+.clickable {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text-section {
+  flex: 1;
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+}
+@media (max-width: 800px) {
+  .image-section img {
+    width: 50%;
+  }
+  .image-section {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-section {
+    display: none;
+  }
+}
+.btn-back {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  width: 60px;
+  border-bottom-right-radius: 25px;
+  border-top-left-radius: 25px;
+  height: 30px;
+  color: rgb(68, 153, 228);
+  box-shadow: 0px 0px 5px rgba(91, 109, 123, 0.511);
+  transition: 0.3s;
+  background-color: rgb(68, 153, 228);
+  color: white;
+}
+.btn-back:hover {
+  background-color: rgb(20, 100, 169);
+  color: white;
+  box-shadow: 0px 0px 5px rgba(91, 109, 123, 0.235);
+  transition: 0.3s;
+}
+.btn-back:active {
+  transition: 0.25s ease-in-out;
+  scale: 0.8;
+}
+@keyframes fadeInScaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.batu-bata {
+  position: fixed;
+  width: 40px;
+  height: 20px;
+  background-color: #9b35355c;
+  z-index: -1;
+  border-radius: 5px;
+}
+.directory-div {
+  width: 82%;
+  max-width: 798px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+  margin-top: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px grey;
+  color: rgb(77, 77, 77);
+  padding: 5px;
+  border-top: 5px solid rgb(68, 153, 228);
+}
+@media (max-width: 650px) {
+  .directory-div {
+    width: 90%;
+    margin-bottom: 0px;
+    margin-top: 25px;
+  }
+  .on-hover {
+    display: none;
+  }
+  #detailContainer {
+    margin-top: 20px;
+  }
+}
+.directory-div h4 {
+  margin: 8px;
+  border-bottom: 2px solid lightgrey;
+}
+.directory-btn-list {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.directory-btn-list label {
+  font-size: 12px;
+  color: grey;
+  cursor: pointer;
+}
+.directory-btn-list label span {
+  color: rgb(68, 153, 228);
+  font-size: 16px;
+}
+.directory-btn-list label:hover {
+  color: rgb(48, 48, 48);
+}
+.directory-btn-list .active {
+  background-color: rgba(159, 159, 159, 0.194);
+  padding: 1px;
+  border-radius: 5px;
+  margin: 1px;
+}
+.scaled {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+.loading-line {
+  height: 4px;
+  width: 0%;
+  background: rgb(0, 103, 190);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 103, 190, 1) 0%,
+    rgba(65, 136, 222, 1) 42%,
+    rgba(185, 221, 241, 1) 100%
+  );
+  transition: 1s;
+}
